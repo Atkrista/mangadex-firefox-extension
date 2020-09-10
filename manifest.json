@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Mangadex Extension",
+  "version": "1.0",
+  "description": "Get updates of your favorite manga series",
+  "homepage_url": "https://www.github.com/Atkrista/mangadex-firefox-extension/",
+  "icons": {
+    "48": "images/icon_48.png"
+  },
+  "permissions": ["active_tab"],
+  "browser_action": {
+    "default_icon": "images/icon_48.png",
+    "default_title": "Options",
+    "default_popup": "popup/settings.html"
+  },
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mangadex@example.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["js/script.js"]
+    }
+  ]
+}
